@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0">
+         <center>
+            <Pane prefHeight="500.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button layoutX="319.0" layoutY="416.0" mnemonicParsing="false" text="Go back to shop">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="176.0" layoutY="214.0" text="Thank you for purchasing!">
+                     <font>
+                        <Font name="Freestyle Script" size="65.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="133.0" layoutY="131.0" text="Payment successfully!">
+                     <font>
+                        <Font size="56.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </center>
+         <top>
+            <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="50.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Aims_Logo.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="144.0" layoutY="5.0" text="Thank you">
+                     <font>
+                        <Font name="Freestyle Script" size="65.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </top>
+      </BorderPane>
+   </children>
+</Pane>
