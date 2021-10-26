@@ -14,7 +14,7 @@
                <children>
                   <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="50.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/Aims_Logo.png" />
+                        <Image url="@../images/logos/Aims_Logo.png" />
                      </image>
                   </ImageView>
                   <Label layoutX="144.0" layoutY="5.0" text="Delivery detail">
@@ -63,11 +63,11 @@
                         <Font size="18.0" />
                      </font>
                   </Button>
-                  <RadioButton layoutX="498.0" layoutY="168.0" mnemonicParsing="false" text="Rush the order">
+                  <CheckBox layoutX="503.0" layoutY="168.0" mnemonicParsing="false" text="Rush the order">
                      <font>
                         <Font size="18.0" />
                      </font>
-                  </RadioButton>
+                  </CheckBox>
                </children>
             </Pane>
          </center>

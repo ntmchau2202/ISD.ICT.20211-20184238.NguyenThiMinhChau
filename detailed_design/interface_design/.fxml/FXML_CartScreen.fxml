@@ -16,7 +16,7 @@
                <children>
                   <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="50.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/Aims_Logo.png" />
+                        <Image url="@../images/logos/Aims_Logo.png" />
                      </image>
                   </ImageView>
                   <Label layoutX="144.0" layoutY="5.0" text="Your cart">
@@ -34,7 +34,7 @@
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="29.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../images/beastars_thumb.jpg" />
+                              <Image url="@../images/data/beastars_thumb.jpg" />
                            </image>
                         </ImageView>
                         <Label layoutX="141.0" layoutY="44.0" text="Beastars Season 1">
@@ -80,12 +80,7 @@
          <right>
             <Pane prefHeight="500.0" prefWidth="250.0" BorderPane.alignment="TOP_LEFT">
                <children>
-                  <Label layoutX="9.0" layoutY="46.0" text="Subtotal:">
-                     <font>
-                        <Font name="System Bold Italic" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="11.0" layoutY="85.0" text="Total:">
+                  <Label layoutX="14.0" layoutY="99.0" text="Subtotal:">
                      <font>
                         <Font name="System Bold Italic" size="18.0" />
                      </font>
@@ -95,12 +90,7 @@
                         <Font size="18.0" />
                      </font>
                   </Button>
-                  <Label layoutX="117.0" layoutY="46.0" text="120 000 VND">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="117.0" layoutY="85.0" text="120 000 VND">
+                  <Label layoutX="122.0" layoutY="99.0" text="120 000 VND">
                      <font>
                         <Font size="18.0" />
                      </font>
