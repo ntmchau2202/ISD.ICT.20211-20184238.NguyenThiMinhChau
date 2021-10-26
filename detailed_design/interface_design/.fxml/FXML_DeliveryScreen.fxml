@@ -30,7 +30,7 @@
                <children>
                   <TextField layoutX="242.0" layoutY="60.0" prefHeight="35.0" prefWidth="420.0" />
                   <TextField layoutX="242.0" layoutY="111.0" prefHeight="35.0" prefWidth="420.0" />
-                  <ChoiceBox layoutX="242.0" layoutY="164.0" prefHeight="35.0" prefWidth="420.0" />
+                  <ChoiceBox layoutX="242.0" layoutY="164.0" prefHeight="35.0" prefWidth="226.0" />
                   <TextField layoutX="242.0" layoutY="219.0" prefHeight="70.0" prefWidth="420.0" />
                   <TextField layoutX="242.0" layoutY="308.0" prefHeight="70.0" prefWidth="420.0" />
                   <Label layoutX="125.0" layoutY="64.0" text="Name">
@@ -63,6 +63,11 @@
                         <Font size="18.0" />
                      </font>
                   </Button>
+                  <RadioButton layoutX="498.0" layoutY="168.0" mnemonicParsing="false" text="Rush the order">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </RadioButton>
                </children>
             </Pane>
          </center>

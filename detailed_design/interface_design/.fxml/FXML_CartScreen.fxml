@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
-
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -28,30 +28,83 @@
             </Pane>
          </top>
          <left>
-            <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" BorderPane.alignment="CENTER">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
-              </content>
+            <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="550.0" BorderPane.alignment="CENTER">
+               <content>
+                  <Pane prefHeight="150.0" prefWidth="530.0">
+                     <children>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="29.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/beastars_thumb.jpg" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="141.0" layoutY="44.0" text="Beastars Season 1">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="141.0" layoutY="75.0" text="Price:">
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="189.0" layoutY="75.0" text="120 000 VND">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="411.0" layoutY="28.0" prefHeight="25.0" prefWidth="90.0" />
+                        <Label layoutX="330.0" layoutY="28.0" text="Quantity:">
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="350.0" layoutY="64.0" mnemonicParsing="false" text="Delete this item from cart" />
+                        <Label layoutX="402.0" layoutY="97.0" text="120 000 VND">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="354.0" layoutY="97.0" text="Total:">
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </content>
+               <padding>
+                  <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
+               </padding>
             </ScrollPane>
          </left>
          <right>
-            <Pane prefHeight="500.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <Pane prefHeight="500.0" prefWidth="250.0" BorderPane.alignment="TOP_LEFT">
                <children>
-                  <Label layoutX="27.0" layoutY="48.0" text="Subtotal">
+                  <Label layoutX="9.0" layoutY="46.0" text="Subtotal:">
                      <font>
-                        <Font size="18.0" />
+                        <Font name="System Bold Italic" size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="28.0" layoutY="87.0" text="Amount">
+                  <Label layoutX="11.0" layoutY="85.0" text="Total:">
                      <font>
-                        <Font size="18.0" />
+                        <Font name="System Bold Italic" size="18.0" />
                      </font>
                   </Label>
-                  <Button layoutX="43.0" layoutY="153.0" mnemonicParsing="false" text="Place order">
+                  <Button layoutX="68.0" layoutY="152.0" mnemonicParsing="false" text="Place order">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Button>
+                  <Label layoutX="117.0" layoutY="46.0" text="120 000 VND">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="117.0" layoutY="85.0" text="120 000 VND">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
                </children>
             </Pane>
          </right>
