@@ -1,0 +1,10 @@
+boundaries
+controllers
+entities
+entities.medias
+entities.transactions
+exceptions.aims
+exceptions.interbank
+interfaces
+utils
+views
