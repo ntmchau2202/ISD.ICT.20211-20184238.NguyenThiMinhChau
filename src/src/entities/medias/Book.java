@@ -6,5 +6,7 @@ package entities.medias;
  *
  */
 public class Book extends Media {
-
+	public Book() {
+		super();
+	}
 }

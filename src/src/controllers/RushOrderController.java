@@ -11,8 +11,8 @@ import exceptions.aims.PlaceOrderException;
  * @author Hikaru
  *
  */
-public class RushOrderController extends AIMSBaseController {
-	private RushOrder rushOrder;
+public class RushOrderController extends PlaceOrderController {
+//	private RushOrder rushOrder;
 	
 	/**
 	 * create a controller for handling rush order request
@@ -61,5 +61,13 @@ public class RushOrderController extends AIMSBaseController {
 	 */
 	public void placeRushOrder() throws PlaceOrderException {
 		
+	}
+	
+	public boolean validateItemSelection(Media media, int selectedQuantity, int availableQuantity) {
+		if (media == null) return false;
+		if(!media.isRushSupported()) return false;
+		else {
+			return super.validateItemSelection(media, selectedQuantity, availableQuantity);
+		}
 	}
 }
