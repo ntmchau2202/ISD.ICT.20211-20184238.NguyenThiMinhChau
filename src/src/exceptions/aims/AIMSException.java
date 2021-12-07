@@ -7,4 +7,8 @@ package exceptions.aims;
  */
 public abstract class AIMSException extends Exception {
 
+	public AIMSException(String message) {
+		super(message);
+	}
+
 }

@@ -1,8 +1,8 @@
 package controllers;
 
 import entities.CreditCard;
-import entities.transactions.PaymentTransaction;
-import entities.transactions.RefundTransaction;
+import entities.transactions.Transaction;
+import entities.transactions.Transaction;
 import exceptions.interbank.InterbankException;
 import exceptions.interbank.InterbankUndefinedException;
 import exceptions.interbank.InternalServerException;
@@ -32,24 +32,12 @@ public class InterbankSubsystemController {
 	}
 	
 	/**
-	 * perform payment transaction
-	 * @param payOrderTransaction information about the payment transaction
-	 * @throws InternalServerException if the bank returns error or there is errors from from the interbank subsystem
-	 * @throws NotEnoughBalanceException if there is not enough balance for paying for transaction
-	 * @throws InterbankUndefinedException if there is an undefined error occurs during the transaction
-	 */
-	public void perform(PaymentTransaction payOrderTransaction) throws InternalServerException, NotEnoughBalanceException, InterbankUndefinedException {
-		
-	}
-
-	/**
-	 * perform refund transaction
-	 * @param refundTransaction information about the refund transaction
+	 * @param Transaction information about the refund transaction
 	 * @throws InternalServerException if the bank returns error or there is errors from from the interbank subsystem
 	 * @throws InterbankUndefinedException if there is an undefined error occurs during the transaction
 	 */
-	public void perform(RefundTransaction refundTransaction) throws InternalServerException, InterbankUndefinedException {
-		
+	public void perform(Transaction transaction) throws InternalServerException, InterbankUndefinedException {
+		transaction.getCreditCard().changeBalance(transaction.getAmount());
 	}
 	
 	/**
@@ -58,8 +46,8 @@ public class InterbankSubsystemController {
 	 * @throws InvalidCardException if there is no information associated to the credit card, or the information is not valid
 	 * @throws InterbankUndefinedException if there is an undefined error occurs during the transaction
 	 */
-	public void query(CreditCard creditCard) throws InvalidCardException, InterbankUndefinedException {
-		
+	public double queryBalance(CreditCard creditCard) throws InvalidCardException, InterbankUndefinedException {
+		return creditCard.getBalance();
 	}
 	
 }

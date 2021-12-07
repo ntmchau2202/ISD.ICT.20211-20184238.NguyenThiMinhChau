@@ -7,4 +7,8 @@ package exceptions.aims;
 
 public class AIMSUndefinedException extends AIMSException {
 
+	public AIMSUndefinedException(String message) {
+		super(message);
+	}
+
 }

@@ -4,6 +4,7 @@ import entities.CreditCard;
 import entities.transactions.Transaction;
 import exceptions.interbank.InterbankUndefinedException;
 import exceptions.interbank.InternalServerException;
+import exceptions.interbank.InvalidCardException;
 import exceptions.interbank.NotEnoughBalanceException;
 
 /**
@@ -37,5 +38,5 @@ public interface InterbankSubsystemInterface {
 	 * @throws InternalServerException if there is an error from the bank
 	 * @throws InterbankUndefinedException if there is any undefined errors during the transaction
 	 */
-	public double getBalance(CreditCard creditCard) throws InternalServerException, InterbankUndefinedException;
+	public double getBalance(CreditCard creditCard) throws InternalServerException, InterbankUndefinedException, InvalidCardException;
 }

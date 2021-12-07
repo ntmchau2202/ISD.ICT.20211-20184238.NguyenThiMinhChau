@@ -1,5 +1,6 @@
 package controllers;
 
+import boundaries.PlaceOrderBoundary;
 import entities.Cart;
 import entities.medias.Media;
 import exceptions.aims.AIMSException;
@@ -22,7 +23,8 @@ public class CartController extends AIMSBaseController {
 	 */
 	
 	public CartController() {
-		
+		this.cart = new Cart();
+		placeOrderSubsystem = new PlaceOrderBoundary();
 	}
 	
 	/**
@@ -33,7 +35,7 @@ public class CartController extends AIMSBaseController {
 	 */
 	
 	public void updateQuantity(Media item, int quantity) throws MediaUpdateException {
-		
+		this.cart.updateQuantity(item, quantity);
 	}
 	
 	/**
@@ -42,8 +44,8 @@ public class CartController extends AIMSBaseController {
 	 * @param quantity quantity of the media item to be added to the cart
 	 * @throws MediaNotAvailableException if the media item is not available or its quantity is not satisfied
 	 */
-	public void addItemToCart(Media item, int quantity) throws MediaNotAvailableException {
-		
+	public void addItemToCart(Media item, int quantity) throws MediaUpdateException {
+		this.cart.addItemToCart(item, quantity);
 	}
 	
 	/**
@@ -51,8 +53,8 @@ public class CartController extends AIMSBaseController {
 	 * @param item media item to be removed from cart
 	 * @throws AIMSException indicates and errors inside the AIMS application
 	 */
-	public void deleteItemFromCart(Media item) throws AIMSException {
-		
+	public void deleteItemFromCart(Media item) throws MediaUpdateException {
+		this.cart.deleteItemFromCart(item);
 	}
 	
 	/**
@@ -60,6 +62,6 @@ public class CartController extends AIMSBaseController {
 	 * @throws PlaceOrderException an exception from place order subsystem
 	 */
 	public void placeOrder() throws PlaceOrderException {
-		
+		this.placeOrderSubsystem.placeOrder(cart);
 	}
 }

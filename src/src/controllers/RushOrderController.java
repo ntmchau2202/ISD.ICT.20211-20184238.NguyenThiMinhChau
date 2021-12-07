@@ -2,8 +2,10 @@ package controllers;
 
 import java.util.Map;
 
+import entities.Cart;
 import entities.RushOrder;
 import entities.medias.Media;
+import exceptions.aims.AIMSException;
 import exceptions.aims.PlaceOrderException;
 
 /**
@@ -12,13 +14,14 @@ import exceptions.aims.PlaceOrderException;
  *
  */
 public class RushOrderController extends PlaceOrderController {
-//	private RushOrder rushOrder;
+	private RushOrder rushOrder;
 	
 	/**
 	 * create a controller for handling rush order request
 	 */
-	public RushOrderController() {
-		
+	public RushOrderController(Cart cart) throws PlaceOrderException {
+		super(cart);
+		this.rushOrder = new RushOrder(cart);
 	}
 	
 	/**
@@ -26,7 +29,7 @@ public class RushOrderController extends PlaceOrderController {
 	 * @return a map of media items in the cart that support rush order with its current quantity in the cart
 	 */
 	public Map<Media, Integer> getListSupportedItem() {
-		return null;
+		return this.rushOrder.getListRushItem();
 	}
 	
 	/**
@@ -34,16 +37,16 @@ public class RushOrderController extends PlaceOrderController {
 	 * @param item media item to be added to rush order
 	 * @param quantity quantity of the selected item
 	 */
-	public void addItemToRushOrder(Media item, int quantity) {
-		
+	public void addItemToRushOrder(Media item, int quantity) throws PlaceOrderException {
+		this.rushOrder.addItemToRushOrder(item, Integer.valueOf(quantity));
 	}
 	
 	/**
 	 * remove item from rush order
 	 * @param item media item to be removed from the rush order
 	 */
-	public void deleteItemToRushOrder(Media item) {
-		
+	public void deleteItemFromRushOrder(Media item) throws PlaceOrderException {
+		this.rushOrder.adjustOrder(item, 0);
 	}
 	
 	/**
@@ -51,23 +54,25 @@ public class RushOrderController extends PlaceOrderController {
 	 * @param item media item having quantity to be updated
 	 * @param quantity new quantity of the selected media
 	 */
-	public void updateItemInRushOrder(Media item, int quantity) {
-		
+	public void updateItemInRushOrder(Media item, int quantity) throws PlaceOrderException {
+		this.rushOrder.adjustOrder(item, quantity);
 	}
 	
 	/**
 	 * request to place rush order
 	 * @throws PlaceOrderException indicates an error occurs during the placing order process
 	 */
-	public void placeRushOrder() throws PlaceOrderException {
-		
-	}
-	
-	public boolean validateItemSelection(Media media, int selectedQuantity, int availableQuantity) {
-		if (media == null) return false;
-		if(!media.isRushSupported()) return false;
-		else {
-			return super.validateItemSelection(media, selectedQuantity, availableQuantity);
+	public boolean validateRushOrder() throws AIMSException {
+		try {
+			for(java.util.Map.Entry<Media, Integer> item : rushOrder.getCart().getListMedia().entrySet()) {
+				if(!super.isItemSelectionValid(item.getKey(), item.getValue().intValue())) {
+					return false;
+				}
+			}
+			return true;			
+		} catch (AIMSException e) {
+			throw e;
 		}
+		
 	}
 }

@@ -7,4 +7,8 @@ package exceptions.aims;
  */
 public class MediaUpdateException extends AIMSException {
 
+	public MediaUpdateException(String message) {
+		super(message);
+	}
+
 }

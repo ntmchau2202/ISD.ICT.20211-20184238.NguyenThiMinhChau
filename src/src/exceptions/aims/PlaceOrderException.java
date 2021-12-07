@@ -5,4 +5,9 @@ package exceptions.aims;
  */
 public class PlaceOrderException extends AIMSException {
 
+	public PlaceOrderException(String message) {
+		super(message);
+		// TODO Auto-generated constructor stub
+	}
+
 }
