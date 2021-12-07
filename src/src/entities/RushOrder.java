@@ -10,9 +10,15 @@ import exceptions.aims.PlaceOrderException;
  *
  */
 public class RushOrder extends Order {
-	
+	/**
+	 * 
+	 */
 	private HashMap<Media, Integer> listRushItem;
-
+	/**
+	 * 
+	 * @param cart
+	 * @throws PlaceOrderException
+	 */
 	public RushOrder(Cart cart) throws PlaceOrderException {
 		super(cart);
 		try {
@@ -24,13 +30,19 @@ public class RushOrder extends Order {
 			throw new PlaceOrderException(e.getMessage());
 		}
 	}
-	
+	/**
+	 * 
+	 * @param media
+	 * @param qty
+	 */
 	public void addItemToRushOrder(Media media, Integer qty) {
 		if(media.isRushSupported()) {
 			listRushItem.put(media, qty);
 		}
 	}
-
+	/**
+	 * 
+	 */
 	public void adjustOrder(Media item, int newQuantity) throws PlaceOrderException {
 		try {
 			if(newQuantity <= 0) {
@@ -43,6 +55,10 @@ public class RushOrder extends Order {
 		}
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
 	public HashMap<Media, Integer> getListRushItem() {
 		return this.listRushItem;
 	}

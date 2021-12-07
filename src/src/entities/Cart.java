@@ -15,16 +15,27 @@ import interfaces.PlaceOrderSubsystemInterface;
  *
  */
 public class Cart {
+	/**
+	 * 
+	 */
 	private HashMap<Media, Integer> listMedia;
-	
+	/**
+	 * 
+	 */
 	public Cart() {
 		listMedia = new HashMap<Media, Integer>();
 	}
-	
+	/**
+	 * 
+	 * @return
+	 */
 	public HashMap<Media, Integer> getListMedia() {
 		return this.listMedia;
 	}
-	
+	/**
+	 * 
+	 * @throws AIMSException
+	 */
 	public void emptyCart() throws AIMSException {
 		try {
 			listMedia.clear();
@@ -32,7 +43,12 @@ public class Cart {
 			throw new AIMSUndefinedException(e.getMessage());
 		}
 	}
-	
+	/**
+	 * 
+	 * @param item
+	 * @param newQuantity
+	 * @throws MediaUpdateException
+	 */
 	public void updateQuantity(Media item, int newQuantity) throws MediaUpdateException {
 		try {
 			if (listMedia.containsKey(item)) {
@@ -43,6 +59,12 @@ public class Cart {
 		}
 	}
 	
+	/**
+	 * 
+	 * @param item
+	 * @param quantity
+	 * @throws MediaUpdateException
+	 */
 	public void addItemToCart(Media item, int quantity) throws MediaUpdateException {
 		try {
 			listMedia.put(item, Integer.valueOf(quantity));
@@ -51,6 +73,11 @@ public class Cart {
 		}
 	}
 	
+	/**
+	 * 
+	 * @param item
+	 * @throws MediaUpdateException
+	 */
 	public void deleteItemFromCart(Media item) throws MediaUpdateException {
 		try {
 			listMedia.remove(item);

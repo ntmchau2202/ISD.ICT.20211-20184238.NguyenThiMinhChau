@@ -36,7 +36,6 @@ public class PaymentController extends AIMSBaseController {
 	
 	/**
 	 * calls the interbank subsystems for performing transaction
-	 * @throws PlaceOrderException indicates an error occurs during the placing order process
 	 * @throws InterbankUndefinedException 
 	 * @throws NotEnoughBalanceException 
 	 * @throws InternalServerException 
@@ -74,7 +73,6 @@ public class PaymentController extends AIMSBaseController {
 	
 	/**
 	 * check payment information before performing transaction
-	 * @throws AIMSException
 	 */
 	
 	private boolean validatePaymentInformation() {

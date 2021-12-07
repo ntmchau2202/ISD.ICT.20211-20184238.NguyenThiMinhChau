@@ -6,7 +6,10 @@ package exceptions.aims;
  */
 
 public class AIMSUndefinedException extends AIMSException {
-
+	/**
+	 * 
+	 * @param message
+	 */
 	public AIMSUndefinedException(String message) {
 		super(message);
 	}

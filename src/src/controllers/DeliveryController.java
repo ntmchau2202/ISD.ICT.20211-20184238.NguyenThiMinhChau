@@ -23,9 +23,11 @@ public class DeliveryController extends AIMSBaseController {
 	}
 	
 	/**
-	 * modify delivery information previously inputed
-	 * @param newCustomerInformation the information of the customer
-	 * @throws AIMSException indicates and errors inside the AIMS application
+	 * 
+	 * @param name
+	 * @param address
+	 * @param phoneNumber
+	 * @throws AIMSException
 	 */
 	public void updateDeliveryInformation(String name, String address, String phoneNumber) throws AIMSException {
 		this.validateDeliveryInformation(name, address, phoneNumber);

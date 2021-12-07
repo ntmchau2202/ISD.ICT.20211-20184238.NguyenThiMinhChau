@@ -32,7 +32,7 @@ public class InterbankSubsystemController {
 	}
 	
 	/**
-	 * @param Transaction information about the refund transaction
+	 * @param transaction information about the refund transaction
 	 * @throws InternalServerException if the bank returns error or there is errors from from the interbank subsystem
 	 * @throws InterbankUndefinedException if there is an undefined error occurs during the transaction
 	 */

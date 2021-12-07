@@ -6,7 +6,10 @@ package exceptions.aims;
  *
  */
 public class MediaNotAvailableException extends AIMSException {
-
+	/**
+	 * 
+	 * @param message
+	 */
 	public MediaNotAvailableException(String message) {
 		super(message);
 		// TODO Auto-generated constructor stub

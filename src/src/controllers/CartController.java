@@ -39,19 +39,19 @@ public class CartController extends AIMSBaseController {
 	}
 	
 	/**
-	 * add an item to cart with quantity 
-	 * @param item media item to be added to the cart 
-	 * @param quantity quantity of the media item to be added to the cart
-	 * @throws MediaNotAvailableException if the media item is not available or its quantity is not satisfied
+	 * 
+	 * @param item
+	 * @param quantity
+	 * @throws MediaUpdateException
 	 */
 	public void addItemToCart(Media item, int quantity) throws MediaUpdateException {
 		this.cart.addItemToCart(item, quantity);
 	}
 	
 	/**
-	 * remove a media item from cart	
-	 * @param item media item to be removed from cart
-	 * @throws AIMSException indicates and errors inside the AIMS application
+	 * 
+	 * @param item
+	 * @throws MediaUpdateException
 	 */
 	public void deleteItemFromCart(Media item) throws MediaUpdateException {
 		this.cart.deleteItemFromCart(item);

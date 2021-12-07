@@ -6,5 +6,6 @@ entities.transactions
 exceptions.aims
 exceptions.interbank
 interfaces
+test
 utils
 views
