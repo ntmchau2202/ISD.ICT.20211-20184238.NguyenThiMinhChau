@@ -5,8 +5,6 @@ import entities.CreditCard;
 import entities.Invoice;
 import entities.Order;
 import entities.transactions.Transaction;
-import exceptions.aims.AIMSException;
-import exceptions.aims.PlaceOrderException;
 import exceptions.interbank.InterbankUndefinedException;
 import exceptions.interbank.InternalServerException;
 import exceptions.interbank.NotEnoughBalanceException;
