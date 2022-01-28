@@ -1,7 +1,18 @@
-Note for laboratory submissions:
+# AIMS Project brief design
 
-Lab 06: 
+This is the brief description for AIMS project design for ITSS Software Development class at HUST, 20211
 
-- The documentations is exported into JavaDocs format in folder /src/doc
+The purpose of this README is to override the original design at critical points, which is analyzed and fixed on the labs, but are not fixed in documentations
 
-- Not only the Place Rush Order and Pay Order case, but the whole system designed in this lab
+## Class design
+
+![Class design](.\detailed_design\class_design\AIMS_class_design\AIMS_class_diagrams.png)
+
+
+## Database design
+
+![Database design](.\detailed_design/data_modeling/AIMS_DB.drawio.png)
+
+## Design review
+
+In the folder `.\good_design\design_concepts\design_review.docx`
