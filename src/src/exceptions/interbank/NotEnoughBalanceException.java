@@ -7,4 +7,8 @@ package exceptions.interbank;
  */
 public class NotEnoughBalanceException extends InterbankException {
 
+	public NotEnoughBalanceException(String string) {
+		super(string);
+	}
+
 }

@@ -15,13 +15,13 @@ public class Invoice {
 	/**
 	 * 
 	 */
-	private Order order;
+	private NormalOrder order;
 	/**
 	 * 
 	 * @param transaction
 	 * @param order
 	 */
-	public Invoice(Transaction transaction, Order order) {
+	public Invoice(Transaction transaction, NormalOrder order) {
 		this.order = order;
 		this.transaction = transaction;
 	}
@@ -36,7 +36,7 @@ public class Invoice {
 	 * 
 	 * @return
 	 */
-	public Order getOrder() {
+	public NormalOrder getOrder() {
 		return order;
 	}
 

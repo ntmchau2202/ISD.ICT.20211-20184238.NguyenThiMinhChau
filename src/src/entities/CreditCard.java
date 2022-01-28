@@ -25,6 +25,8 @@ public class CreditCard {
 	 */
 	private String securityCode;
 	
+	private String expirationDate;
+	
 	/**
 	 * 
 	 * @param cardNumber
@@ -33,12 +35,11 @@ public class CreditCard {
 	 * @param issuingBank
 	 * @param securityCode
 	 */
-	public CreditCard(String cardNumber, String cardholderName, double balance, String issuingBank, String securityCode) {
+	public CreditCard(String cardNumber, String cardholderName,String securityCode, String expirationDate) {
 		this.cardNumber = cardNumber;
 		this.cardHolderName = cardholderName;
-		this.balance = balance;
-		this.issuingBank = issuingBank;
 		this.securityCode = securityCode;
+		this.expirationDate = expirationDate;
 	}
 	/**
 	 * 
@@ -81,6 +82,10 @@ public class CreditCard {
 	 */
 	public void changeBalance(double amount) {
 		this.balance += amount; // need a better mechanism for this
+	}
+	
+	public String getExpirationDate() {
+		return expirationDate;
 	}
 	
 }

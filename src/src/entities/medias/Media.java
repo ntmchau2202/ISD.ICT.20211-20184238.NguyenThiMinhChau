@@ -12,6 +12,8 @@ public abstract class Media {
 	private String title;
 	private double price;
 	private boolean supportRush;
+	private int mediaID;
+	private String imagePath;
 	/**
 	 * 
 	 * @param title
@@ -19,10 +21,37 @@ public abstract class Media {
 	 * @param supportRush
 	 * @throws InvalidMediaInfoException
 	 */
-	public Media(String title, double price, boolean supportRush) throws InvalidMediaInfoException {
+	public Media(int ID, String title, double price, boolean supportRush, String imagePath) throws InvalidMediaInfoException {
+		this.setMediaID(ID);
 		this.setPrice(price);
 		this.setTitle(title);
 		this.setRushSupport(supportRush);
+		this.setImagePath(imagePath);
+		
+	}
+	
+	public String getImagePath() {
+		return this.imagePath;
+	}
+	
+	public void setImagePath(String imageName) {
+		this.imagePath = imageName;
+	}
+	
+	public int getMediaID() {
+		return mediaID;
+	}
+
+	public void setMediaID(int mediaID) {
+		this.mediaID = mediaID;
+	}
+
+	public Media(int ID, String title, double price, boolean supportRush, int currentQuantity) throws InvalidMediaInfoException {
+		this.setMediaID(ID);
+		this.setPrice(price);
+		this.setTitle(title);
+		this.setRushSupport(supportRush);
+		
 	}
 	/**
 	 * 

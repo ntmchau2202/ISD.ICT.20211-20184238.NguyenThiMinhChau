@@ -16,4 +16,6 @@ public interface PlaceOrderSubsystemInterface {
 	 * @throws PlaceOrderException indicates an error occurs during the placing order process
 	 */
 	public void placeOrder(Cart cart) throws PlaceOrderException;
+	
+	public void placeRushOrder(Cart cart) throws PlaceOrderException;
 }

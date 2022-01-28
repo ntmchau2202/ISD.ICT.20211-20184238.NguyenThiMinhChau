@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane fx:id="borPane_main" layoutX="7.0" prefHeight="600.0" prefWidth="800.0">
+         <top>
+            <Pane prefHeight="100.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fx:id="imgv_logo" fitHeight="80.0" fitWidth="80.0" layoutX="56.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../detailed_design/interface_design/images/logos/Aims_Logo.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="mediaNameHeaderLbl" layoutX="148.0" text="Item name">
+                     <font>
+                        <Font name="Freestyle Script" size="65.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="backBtn" fitHeight="70.0" fitWidth="70.0" layoutX="660.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../assets/icons/return.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </top>
+         <center>
+            <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fx:id="image" fitHeight="250.0" fitWidth="250.0" layoutX="79.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label layoutX="365.0" layoutY="123.0" text="Name:">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="mediaNameLbl" layoutX="511.0" layoutY="123.0" text="Item name">
+                     <font>
+                        <Font name="System Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="authorsLbl" layoutX="511.0" layoutY="180.0" text="Authors">
+                     <font>
+                        <Font name="System Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="365.0" layoutY="180.0" text="Author:">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lengthTitleLbl" layoutX="365.0" layoutY="210.0" text="Length:">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lengthLbl" layoutX="511.0" layoutY="210.0" text="10 mins">
+                     <font>
+                        <Font name="System Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="numOfTracksLbl" layoutX="511.0" layoutY="240.0" text="10 mins">
+                     <font>
+                        <Font name="System Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="numOfTracksTitleLbl" layoutX="365.0" layoutY="240.0" text="No. of Tracks:">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="365.0" layoutY="318.0" text="Select:">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="selectorTxtFld" layoutX="437.0" layoutY="319.0" prefHeight="25.0" prefWidth="138.0" />
+                  <Label fx:id="mediaAvailableQuantityLbl" layoutX="595.0" layoutY="318.0" text="over X availables">
+                     <font>
+                        <Font name="System Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="addToCartBtn" layoutX="514.0" layoutY="376.0" mnemonicParsing="false" text="Add to cart">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="mediaTypeLbl" layoutX="511.0" layoutY="151.0" text="Book">
+                     <font>
+                        <Font name="System Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="365.0" layoutY="151.0" text="Type:">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="numOfTracksTitleLbl1" layoutX="366.0" layoutY="269.0" text="Price:">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="mediaPriceLbl" layoutX="512.0" layoutY="269.0" text="100 000 VND">
+                     <font>
+                        <Font name="System Italic" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </center>
+      </BorderPane>
+   </children>
+</Pane>

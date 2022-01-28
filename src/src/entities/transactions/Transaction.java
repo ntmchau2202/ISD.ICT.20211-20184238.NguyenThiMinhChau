@@ -8,6 +8,10 @@ import entities.CreditCard;
  *
  */
 public class Transaction {
+	public static enum TransactionType {
+		PAY_ORDER,
+		REFUND
+	}
 	private int transactionID;
 	private CreditCard creditCard;
 	private double amount;
@@ -21,8 +25,7 @@ public class Transaction {
 	 * @param amt
 	 * @param content
 	 */
-	public Transaction(int transactionID, CreditCard card, double amt, String content) {
-		this.transactionID = transactionID;
+	public Transaction(CreditCard card, double amt, String content) {
 		this.amount = amt;
 		this.content = content;
 		this.creditCard = card;

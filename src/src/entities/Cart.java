@@ -67,7 +67,13 @@ public class Cart {
 	 */
 	public void addItemToCart(Media item, int quantity) throws MediaUpdateException {
 		try {
-			listMedia.put(item, Integer.valueOf(quantity));
+			if (listMedia.containsKey(item)) {
+				int currentQuantity = listMedia.get(item);
+				int newQuantity = currentQuantity + quantity;
+				listMedia.replace(item, newQuantity);
+			} else {				
+				listMedia.put(item, Integer.valueOf(quantity));
+			}
 		} catch (Exception e) {
 			throw new MediaUpdateException(e.getMessage());
 		}

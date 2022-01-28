@@ -1,67 +1,63 @@
 package controllers;
 
-import boundaries.PlaceOrderBoundary;
+import java.sql.SQLException;
+import java.util.Iterator;
+import java.util.Map.Entry;
+
 import entities.Cart;
 import entities.medias.Media;
-import exceptions.aims.AIMSException;
-import exceptions.aims.MediaNotAvailableException;
+import exceptions.aims.InvalidMediaInfoException;
 import exceptions.aims.MediaUpdateException;
-import exceptions.aims.PlaceOrderException;
-import interfaces.PlaceOrderSubsystemInterface;
 
-/**
- * 
- * @author Hikaru
- *
- */
-public class CartController extends AIMSBaseController {
+public class CartController {
 	private Cart cart;
-	private PlaceOrderSubsystemInterface placeOrderSubsystem;
+	private static CartController cartController;
 	
-	/**
-	 * creates a cart controller for handling manipulations on cart
-	 */
-	
-	public CartController() {
-		this.cart = new Cart();
-		placeOrderSubsystem = new PlaceOrderBoundary();
+	private CartController() {
+		cart = new Cart();
 	}
 	
-	/**
-	 * modifies quantity of a media item in rush order
-	 * @param item media item having quantity to be updated
-	 * @param quantity new quantity of the media item
-	 * @throws MediaUpdateException	if the update quantity is not valid, or errors occurs in the update process
-	 */
-	
-	public void updateQuantity(Media item, int quantity) throws MediaUpdateException {
-		this.cart.updateQuantity(item, quantity);
+	public static CartController getCartController() {
+		if (cartController == null) {
+			cartController = new CartController();
+		}
+		
+		return cartController;
 	}
 	
-	/**
-	 * 
-	 * @param item
-	 * @param quantity
-	 * @throws MediaUpdateException
-	 */
-	public void addItemToCart(Media item, int quantity) throws MediaUpdateException {
-		this.cart.addItemToCart(item, quantity);
+	public Cart getCart() {
+		return this.cart;
 	}
 	
-	/**
-	 * 
-	 * @param item
-	 * @throws MediaUpdateException
-	 */
-	public void deleteItemFromCart(Media item) throws MediaUpdateException {
-		this.cart.deleteItemFromCart(item);
+	public void removeItemFromCart(Media m) throws MediaUpdateException {
+		this.cart.deleteItemFromCart(m);
 	}
 	
-	/**
-	 * send information of media items with quantity to be orderd to the place order subsystem for processing
-	 * @throws PlaceOrderException an exception from place order subsystem
-	 */
-	public void placeOrder() throws PlaceOrderException {
-		this.placeOrderSubsystem.placeOrder(cart);
+	public void addItemToCart(Media m, int quan) throws MediaUpdateException, InvalidMediaInfoException, SQLException {
+		if (quan > InformationController.getInformationController().getMediaCurrentAvailableQuantity(m)) {
+			throw new MediaUpdateException("Selected quantity exceed available quantity");
+		}
+		this.cart.addItemToCart(m, quan);
+	}
+	
+	public void adjustItemQuantity(Media m, int newQuan) throws MediaUpdateException, InvalidMediaInfoException, SQLException {
+		if (newQuan > InformationController.getInformationController().getMediaCurrentAvailableQuantity(m)) {
+			throw new MediaUpdateException("Selected quantity exceed available quantity");
+		}
+		this.cart.updateQuantity(m, newQuan);
+	}
+	
+	public double calculateCart() {
+		double result = 0;
+		Iterator<Entry<Media, Integer>> it = cart.getListMedia().entrySet().iterator();
+		try {
+			while(it.hasNext()) {
+				Entry<Media,Integer> entry = (Entry<Media, Integer>)it.next();
+				result += entry.getKey().getPrice() * entry.getValue();
+			}	
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
 	}
 }

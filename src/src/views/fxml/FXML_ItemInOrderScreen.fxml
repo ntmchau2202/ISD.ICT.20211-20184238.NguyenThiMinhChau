@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane prefHeight="150.0" prefWidth="385.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fx:id="image" fitHeight="80.0" fitWidth="80.0" layoutX="14.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/beastars_thumb.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="nameLbl" layoutX="106.0" layoutY="23.0" text="Beastars Season 1">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="106.0" layoutY="48.0" text="Price:">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="priceLbl" layoutX="155.0" layoutY="48.0" text="120 000 VND">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="106.0" layoutY="73.0" text="Quantity:">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="quantityLbl" layoutX="184.0" layoutY="73.0" text="2">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="106.0" layoutY="98.0" text="Total:">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="totalPriceLbl" layoutX="155.0" layoutY="98.0" text="240 000 VND">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

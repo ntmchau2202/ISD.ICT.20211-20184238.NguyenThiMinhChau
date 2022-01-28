@@ -17,4 +17,10 @@ public class PlaceOrderBoundary implements PlaceOrderSubsystemInterface {
 		
 	}
 
+	@Override
+	public void placeRushOrder(Cart cart) throws PlaceOrderException {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

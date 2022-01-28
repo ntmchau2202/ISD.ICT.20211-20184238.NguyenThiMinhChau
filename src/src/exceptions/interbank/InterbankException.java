@@ -7,4 +7,8 @@ package exceptions.interbank;
  */
 public abstract class InterbankException extends Exception {
 
+	public InterbankException(String string) {
+		super(string);
+	}
+
 }

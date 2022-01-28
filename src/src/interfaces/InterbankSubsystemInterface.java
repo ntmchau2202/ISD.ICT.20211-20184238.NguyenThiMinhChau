@@ -2,6 +2,7 @@ package interfaces;
 
 import entities.CreditCard;
 import entities.transactions.Transaction;
+import exceptions.interbank.InterbankException;
 import exceptions.interbank.InterbankUndefinedException;
 import exceptions.interbank.InternalServerException;
 import exceptions.interbank.InvalidCardException;
@@ -21,7 +22,7 @@ public interface InterbankSubsystemInterface {
 	 * @throws NotEnoughBalanceException if there is not enough balance to perform the transaction
 	 * @throws InterbankUndefinedException if there is any undefined errors during the transaction
 	 */
-	public void payOrder(Transaction transaction) throws InternalServerException, NotEnoughBalanceException, InterbankUndefinedException;
+	public void payOrder(Transaction transaction) throws InterbankException;
 	
 	/**
 	 * perform refund with given transaction details
@@ -29,7 +30,7 @@ public interface InterbankSubsystemInterface {
 	 * @throws InternalServerException if there is an error from the bank
 	 * @throws InterbankUndefinedException if there is any undefined errors during the transaction
 	 */
-	public void refund(Transaction transaction) throws InternalServerException, InterbankUndefinedException;
+	public void refund(Transaction transaction) throws InterbankException;
 	
 	/**
 	 * get current balance in the given credit card
@@ -38,5 +39,5 @@ public interface InterbankSubsystemInterface {
 	 * @throws InternalServerException if there is an error from the bank
 	 * @throws InterbankUndefinedException if there is any undefined errors during the transaction
 	 */
-	public double getBalance(CreditCard creditCard) throws InternalServerException, InterbankUndefinedException, InvalidCardException;
+	public double getBalance(CreditCard creditCard) throws InterbankException;
 }

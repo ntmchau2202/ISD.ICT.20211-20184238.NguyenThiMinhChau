@@ -7,4 +7,9 @@ package exceptions.interbank;
  */
 public class InternalServerException extends InterbankException {
 
+	public InternalServerException(String string) {
+		super(string);
+		// TODO Auto-generated constructor stub
+	}
+
 }

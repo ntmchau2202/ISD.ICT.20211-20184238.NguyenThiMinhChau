@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0">
+         <top>
+            <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="50.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../detailed_design/interface_design/images/logos/Aims_Logo.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="144.0" layoutY="5.0" text="Delivery detail">
+                     <font>
+                        <Font name="Freestyle Script" size="65.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="backBtn" fitHeight="70.0" fitWidth="70.0" layoutX="675.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../assets/icons/return.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </top>
+         <center>
+            <Pane prefHeight="500.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TextField fx:id="nameTxtFld" layoutX="242.0" layoutY="60.0" prefHeight="35.0" prefWidth="420.0" />
+                  <TextField fx:id="phoneTxtFld" layoutX="242.0" layoutY="111.0" prefHeight="35.0" prefWidth="420.0" />
+                  <ChoiceBox fx:id="cityChoiceBox" layoutX="242.0" layoutY="164.0" prefHeight="35.0" prefWidth="418.0" />
+                  <TextField fx:id="addressTxtFld" layoutX="242.0" layoutY="219.0" prefHeight="70.0" prefWidth="420.0" />
+                  <TextField fx:id="instructionTxtFld" layoutX="242.0" layoutY="308.0" prefHeight="70.0" prefWidth="420.0" />
+                  <Label layoutX="125.0" layoutY="64.0" text="Name">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="124.0" layoutY="115.0" text="Phone">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="96.0" layoutY="168.0" text="Province/City">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="117.0" layoutY="219.0" text="Address">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="69.0" layoutY="308.0" text="Shipping instruction">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="submitBtn" layoutX="360.0" layoutY="416.0" mnemonicParsing="false" text="Submit">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+         </center>
+      </BorderPane>
+   </children>
+</Pane>

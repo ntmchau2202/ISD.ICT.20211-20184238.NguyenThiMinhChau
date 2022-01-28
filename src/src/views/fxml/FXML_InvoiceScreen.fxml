@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <bottom>
+      <Pane prefHeight="100.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="confirmBtn" layoutX="356.0" layoutY="31.0" mnemonicParsing="false" text="Confirm">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </bottom>
+   <left>
+      <BorderPane prefHeight="500.0" prefWidth="400.0" BorderPane.alignment="TOP_LEFT">
+         <bottom>
+            <Pane prefHeight="150.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="313.0" layoutY="27.0" text="Subtotal">
+                     <font>
+                        <Font name="System Bold Italic" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="296.0" layoutY="51.0" text="VAT (10%)">
+                     <font>
+                        <Font name="System Bold Italic" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="282.0" layoutY="77.0" text="Shipping fee">
+                     <font>
+                        <Font name="System Bold Italic" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="336.0" layoutY="108.0" text="Total" textFill="RED">
+                     <font>
+                        <Font name="System Bold Italic" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="vatLbl" layoutX="173.0" layoutY="51.0" prefHeight="25.0" prefWidth="86.0" text="24 000 VND" textAlignment="RIGHT">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="subtotalLbl" layoutX="165.0" layoutY="27.0" text="240 000 VND" textAlignment="RIGHT">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="shippingFeeLbl" layoutX="173.0" layoutY="75.0" prefHeight="25.0" prefWidth="86.0" text="12 000 VND">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="totalLbl" layoutX="164.0" layoutY="108.0" prefHeight="25.0" prefWidth="95.0" text="236 000 VND" textAlignment="RIGHT" textFill="RED">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </bottom>
+         <center>
+            <ScrollPane prefHeight="200.0" prefWidth="400.0" BorderPane.alignment="TOP_LEFT">
+               <padding>
+                  <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
+               </padding>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+               <content>
+                  <VBox fx:id="itemsVBox" prefHeight="179.0" prefWidth="374.0" />
+               </content>
+            </ScrollPane>
+         </center>
+         <top>
+            <Pane prefHeight="50.0" prefWidth="400.0" BorderPane.alignment="TOP_LEFT">
+               <children>
+                  <Label layoutX="21.0" layoutY="8.0" text="Items to be purchased">
+                     <font>
+                        <Font name="System Bold Italic" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </top>
+      </BorderPane>
+   </left>
+   <right>
+      <BorderPane prefHeight="500.0" prefWidth="400.0" BorderPane.alignment="TOP_LEFT">
+         <center>
+            <Pane prefHeight="450.0" prefWidth="400.0" BorderPane.alignment="TOP_LEFT">
+               <children>
+                  <Label layoutX="43.0" layoutY="22.0" text="Name">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="41.0" layoutY="69.0" text="Phone">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="39.0" layoutY="112.0" text="Province/&#13;City">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="41.0" layoutY="172.0" text="Address">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="41.0" layoutY="253.0" text="Shipping&#13;instruction">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="cityLbl" layoutX="143.0" layoutY="126.0" text="Hanoi">
+                     <font>
+                        <Font name="System Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="nameLbl" layoutX="143.0" layoutY="22.0" text="Nguyen Van A">
+                     <font>
+                        <Font name="System Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="phoneLbl" layoutX="143.0" layoutY="69.0" text="012 345 6789">
+                     <font>
+                        <Font name="System Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="addressLbl" layoutX="143.0" layoutY="172.0" text="123 Tay Ho">
+                     <font>
+                        <Font name="System Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="instructionLbl" layoutX="145.0" layoutY="267.0" text="Ship outside working hour">
+                     <font>
+                        <Font name="System Italic" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </center>
+         <top>
+            <Pane prefHeight="50.0" prefWidth="400.0" BorderPane.alignment="TOP_LEFT">
+               <children>
+                  <Label layoutX="14.0" layoutY="8.0" text="Shipping detail">
+                     <font>
+                        <Font name="System Bold Italic" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </top>
+      </BorderPane>
+   </right>
+   <top>
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="50.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../detailed_design/interface_design/images/logos/Aims_Logo.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="144.0" layoutY="5.0" text="Invoice for order">
+               <font>
+                  <Font name="Freestyle Script" size="65.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="backBtn" fitHeight="70.0" fitWidth="70.0" layoutX="686.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../assets/icons/return.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </top>
+</BorderPane>

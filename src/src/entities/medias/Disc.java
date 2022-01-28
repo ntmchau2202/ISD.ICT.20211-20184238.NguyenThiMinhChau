@@ -8,10 +8,17 @@ import exceptions.aims.InvalidMediaInfoException;
  *
  */
 public abstract class Disc extends Media {
-
-	public Disc(String title, double price, boolean supportRush) throws InvalidMediaInfoException {
-		super(title, price, supportRush);
-		// TODO Auto-generated constructor stub
+	protected double length;
+	public Disc(int ID, String title, double price, boolean supportRush, String imagePath) throws InvalidMediaInfoException {
+		super(ID, title, price, supportRush, imagePath);
+	}
+	
+	public void setLength(double length) {
+		this.length = length;
+	}
+	
+	public double getLength() {
+		return this.length;
 	}
 
 }

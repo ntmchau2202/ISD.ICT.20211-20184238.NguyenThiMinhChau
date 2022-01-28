@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane prefHeight="137.0" prefWidth="395.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fx:id="mediaImgView" fitHeight="100.0" fitWidth="100.0" layoutX="23.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/beastars_thumb.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="mediaNameLabel" layoutX="129.0" layoutY="30.0" text="Beastars Season 1">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="129.0" layoutY="85.0" text="Price:">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="mediaPriceLabel" layoutX="178.0" layoutY="85.0" text="120 000 VND">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="viewDetailBtn" layoutX="295.0" layoutY="65.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" text="View details" />
+      <Label fx:id="availableNumTxt" layoutX="225.0" layoutY="63.0" text="10">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="128.0" layoutY="63.0" text="Available:">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

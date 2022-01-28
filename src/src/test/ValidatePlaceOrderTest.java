@@ -7,17 +7,17 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-import controllers.PlaceOrderController;
+import controllers.PlaceNormalOrderController;
 import controllers.RushOrderController;
 import entities.medias.Book;
 
 class ValidatePlaceOrderTest {
-	PlaceOrderController placeOrderController;
+	PlaceNormalOrderController placeOrderController;
 	RushOrderController rushOrderController;
 
 	@BeforeEach
 	void setUp() throws Exception {
-		placeOrderController = new PlaceOrderController();
+		placeOrderController = new PlaceNormalOrderController();
 		rushOrderController = new RushOrderController();
 	}
 

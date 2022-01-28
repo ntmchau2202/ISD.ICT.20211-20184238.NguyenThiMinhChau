@@ -7,4 +7,8 @@ package exceptions.interbank;
  */
 public class InvalidCardException extends InterbankException {
 
+	public InvalidCardException(String string) {
+		super(string);
+	}
+
 }

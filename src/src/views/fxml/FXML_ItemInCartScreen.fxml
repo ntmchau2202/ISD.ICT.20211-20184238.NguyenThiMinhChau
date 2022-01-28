@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane prefHeight="172.0" prefWidth="530.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fx:id="image" fitHeight="100.0" fitWidth="100.0" layoutX="67.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/data/beastars_thumb.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="mediaNameLbl" layoutX="179.0" layoutY="44.0" text="Beastars Season 1">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="179.0" layoutY="68.0" text="Price:">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="mediaPriceLbl" layoutX="227.0" layoutY="68.0" text="120 000 VND">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="selectQuantityTxtFld" layoutX="260.0" layoutY="96.0" prefHeight="25.0" prefWidth="90.0" />
+      <Label layoutX="179.0" layoutY="96.0" text="Quantity:">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="itemTotalLbl" layoutX="391.0" layoutY="67.0" text="120 000 VND">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="343.0" layoutY="67.0" text="Total:">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Label>
+      <CheckBox fx:id="selectItemBox" layoutX="29.0" layoutY="67.0" mnemonicParsing="false" />
+      <Button fx:id="deleteBtn" layoutX="398.0" layoutY="96.0" mnemonicParsing="false" text="Delete from cart" />
+      <Label layoutX="179.0" layoutY="125.0" text="Support rush:">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="supportRushLbl" layoutX="296.0" layoutY="125.0" text="120 000 VND">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

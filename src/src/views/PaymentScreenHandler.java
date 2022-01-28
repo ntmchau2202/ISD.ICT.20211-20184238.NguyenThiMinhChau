@@ -1,6 +1,21 @@
 package views;
 
+import java.io.IOException;
+import java.sql.SQLException;
+
 import controllers.AIMSBaseController;
+import controllers.PlaceNormalOrderController;
+import controllers.PlaceOrderController;
+import exceptions.aims.InvalidDeliveryException;
+import exceptions.aims.InvalidMediaInfoException;
+import exceptions.aims.MediaUpdateException;
+import exceptions.aims.PlaceOrderException;
+import exceptions.interbank.InterbankException;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+import utils.Configs;
 
 /**
  * 
@@ -12,54 +27,57 @@ public class PaymentScreenHandler extends AIMSBaseScreenHandler  {
 	/***
 	 * Initialize the Payment method screen 
 	 * @param prevScreen a handler to the screen that called this screen
+	 * @throws IOException 
 	 */
-	protected PaymentScreenHandler(AIMSBaseScreenHandler prevScreen) {
-		super(prevScreen);
-		// TODO Auto-generated constructor stub
+	
+	@FXML
+	private TextField cardHolderNameTxtFld;
+	@FXML
+	private TextField cardNumberTxtFld;
+	@FXML
+	private TextField expirationDateTxtFld;
+	@FXML
+	private TextField securityCodeTxtFld;
+	@FXML
+	private Button confirmBtn;
+	
+	protected PaymentScreenHandler(Stage stage, AIMSBaseScreenHandler prevScreen) throws IOException {
+		super(stage, prevScreen, Configs.SCREEN_PATH_PAYMENT);
+		initialize();
 	}
 
 	@Override
 	protected void initialize() {
-		// TODO Auto-generated method stub
-		
+		confirmBtn.setOnMouseClicked(e -> {
+			try {
+				validateInput();
+				PlaceOrderController.getPlaceOrderController().validateCard(cardHolderNameTxtFld.getText(), cardNumberTxtFld.getText(), securityCodeTxtFld.getText(), expirationDateTxtFld.getText());
+				PlaceOrderController.getPlaceOrderController().placeOrder();
+				PlaceOrderSuccessScreenHandler thankHandler = new PlaceOrderSuccessScreenHandler(this.stage, this);
+				thankHandler.show();
+			} catch (PlaceOrderException | InterbankException | InvalidMediaInfoException | SQLException | MediaUpdateException e1) {
+				// Invalid card holder name
+				try {
+					e1.printStackTrace();
+					this.notifyError(e1.getMessage());
+				} catch (IOException e2) {
+					// TODO Auto-generated catch block
+					e2.printStackTrace();
+				}
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		});
 	}
 	
-	/**
-	 * Allow customer to update the payment information
-	 */
-	public void updatePaymentMethod() {
-		
-	}
-	
-	/**
-	 * Submit the customer payment information to the controller
-	 */
-	public void submitPaymentForm() {
-		
-	}
-	
-	/**
-	 * Sends the payment information of customers to controller or reject the payment information 
-	 * @param confirmation confirmation of customer <br>
-	 * if confirmation = true, send the payment information to controller <br>
-	 * if confirmation = false, reject the payment information
-	 */
-	public void confirmPayment(boolean confirmation) {
-		
-	}
-	
-	/**
-	 * Clear the payment information form
-	 */
-	private void clearPaymentForm() {
-		
-	}
-	
-	/**
-	 * check the payment form for invalid input before sending to the controller
-	 */
-	private void validatePaymentForm() {
-		
+	private void validateInput() throws PlaceOrderException {
+		if(cardHolderNameTxtFld.getText().length() == 0 ||
+				cardNumberTxtFld.getText().length() == 0 ||
+				expirationDateTxtFld.getText().length() == 0 ||
+				securityCodeTxtFld.getText().length() != 3) {
+			throw new PlaceOrderException("Invalid field, please check again");
+		}
 	}
 
 }
